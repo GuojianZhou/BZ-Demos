@@ -6,7 +6,10 @@ cc_library(
 	srcs = glob(["libcnrt.so"]),
 	hdrs = ["cnrt.h"],
 	linkopts = ["-lcnrt"],
-	visibility = ["//src:__pkg__"],
+	visibility = [
+			"//src:__pkg__",
+			"//classification:__pkg__",
+	],
 )
 
 cc_library(
@@ -14,5 +17,6 @@ cc_library(
 	srcs = glob(["libcnml.so"]),
 	hdrs = ["cnml.h"],
 	linkopts = ["-lcnml"],
-	visibility = ["//src:__pkg__"],
+	visibility = [	"//visibility:public",
+			],
 )
